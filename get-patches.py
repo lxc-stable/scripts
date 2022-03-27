@@ -133,7 +133,7 @@ def get_backports(upstream=''):
         backports = get_cherry_picks(app["override-build"])
         d = {"app": k,
              "tag": f"{k}-{version}",
-             "branch_name": f"{version}-stable",
+             "branch_name": f"stable-{version}",
              "backports": backports}
         if k == upstream:
             return [d]
