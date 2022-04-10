@@ -63,8 +63,7 @@ def push_to_remote(branch, remote="stable"):
 
 
 def change_branch(branch, start_branch):
-    subprocess.run(["git", "switch", '-c', branch, start_branch])
-    subprocess.run(["git", "switch", branch])
+    subprocess.run(["git", "checkout", '-b', branch, start_branch])
 
 
 def apply_patch(patches):
