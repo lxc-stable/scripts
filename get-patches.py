@@ -29,6 +29,8 @@ def get_remotes():
     b = subprocess.run(["git", "remote", "-v"], capture_output=True, text=True)
     ret = []
     for line in b.stdout.splitlines():
+        if not line.split('\t')[-1]:
+            continue
         remote = line.split('\t')[-1].split()[0]
         if remote in ret:
             continue
