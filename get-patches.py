@@ -82,6 +82,7 @@ def apply_patch(patches):
             subprocess.run(["git", "cherry-pick", "--abort"], capture_output=True, text=True)
             continue
         print(b.stdout)
+        subprocess.run(["git", "cherry-pick", "--abort"], capture_output=True, text=True)
         raise Exception("failed to apply cherry-pick")
     return new_commits
 
