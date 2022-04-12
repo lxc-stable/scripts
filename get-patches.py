@@ -162,7 +162,7 @@ if not new_commits:
     print("No new commits to backport")
     sys.exit(0)
 
-minor = len(get_tags(prefix=b[0]['tag']))
+minor = len(get_tags(branch=b[0]['branch_name'], prefix=b[0]['tag']))
 new_tag = f"{b[0]['tag']}.{minor}"
 tag_release(new_tag)
 push_to_remote(b[0]['branch_name'])
